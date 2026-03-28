@@ -1,0 +1,71 @@
+# 🏀 NBA Game Outcome Prediction
+### Data Mining Techniques for Accurate Basketball Forecasting
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Accuracy](https://img.shields.io/badge/Best%20Accuracy-98%25-brightgreen)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+## 📌 Overview
+This project applies multiple machine learning classification algorithms to predict
+the outcomes of NBA basketball games (Win/Loss) using game-level statistics from
+the 2019–2024 seasons. The best model, a Hybrid Ensembled Classifier, achieves 98%.
+Submitted as MSc Data Analytics thesis, Dublin Business School, January 2025.
+## 📊 Dataset
+- Source: basketball-reference.com + NBA official site
+- Seasons: 2019–2024 (5 seasons, 30 teams, 82 games/team)
+- Records: ~12,300 games | Shape after cleaning: 14,118 × 28
+- Target: W/L (binary classification: Win=1, Loss=0)
+Key features include: True Shooting %, Effective FG%, Defensive Rating,
+Offensive Rating, Turnover %, Steal %, Block %, Rebound %, and more.
+## 🏗️ Project Structure
+nba-game-prediction/
+├── data/
+│   └── 2019_2024_nba.csv         # Raw dataset
+├── notebooks/
+│   └── nba_prediction_code.ipynb # Main analysis notebook
+├── models/
+│   └── hybrid_ensemble_nba.pkl   # Saved best model
+└── README.md
+## ⚙️ Installation
+```bash
+git clone https://github.com/<your-username>/nba-game-prediction.git
+cd nba-game-prediction
+pip install -r requirements.txt
+```
+Or open the .ipynb directly in Google Colab — no local setup needed.
+## 📦 Requirements
+pandas>=1.5  numpy>=1.23  scikit-learn>=1.2  lightgbm>=3.3
+catboost>=1.2  mlxtend>=0.22  imbalanced-learn>=0.10  plotly>=5.0
+## 🤖 Models & Results
+| Model                      | Accuracy |
+|----------------------------|----------|
+| Logistic Regression        |   89%    |
+| Decision Tree Classifier   |   86%    |
+| Random Forest Classifier   |   93%    |
+| AdaBoost Classifier        |   93%    |
+| CatBoost Classifier        |   95%    |
+| LightGBM Classifier        |   93%    |
+| **Hybrid Ensembled** ⭐     | **98%**  |
+## 🔬 Methodology
+1. Business Understanding (CRISP-DM)
+2. Data Collection & Loading (CSV from basketball-reference.com)
+3. Data Cleaning (drop dupes, rename columns, datetime conversion)
+4. EDA (14+ interactive Plotly visualisations)
+5. Preprocessing (LabelEncoder, stratified split, SMOTE)
+6. Feature Selection (ExtraTreesClassifier importance)
+7. Model Training & Evaluation (7 classifiers)
+8. Hybrid Ensemble Stacking (best model — 98%)
+## 🏆 Hybrid Ensembled Classifier Architecture
+Base Classifiers (Layer 1):
+  ├── LGBMClassifier     (n_estimators=8,  max_depth=6)
+  ├── CatBoostClassifier (n_estimators=6,  max_depth=6)
+  └── RandomForest       (n_estimators=6)
+Meta Classifier (Layer 2): AdaBoostClassifier (n_estimators=5)
+## 📁 Key Features
+- Full CRISP-DM methodology applied
+- 14+ interactive EDA visualisations (Plotly)
+- 7 ML models benchmarked with confusion matrices
+- Novel stacked ensemble architecture (98% accuracy)
+- MSc thesis-level documentation and academic references
+## 📄 License
+MIT License. See LICENSE for details.
+---
+⭐ If you found this useful, please star the repository!
