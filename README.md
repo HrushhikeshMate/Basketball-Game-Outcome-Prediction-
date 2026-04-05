@@ -275,6 +275,7 @@ SHAP (SHapley Additive exPlanations) was applied to LightGBM to explain predicti
 
 | Feature | Mean |SHAP| | Direction | Interpretation |
 |---|---|---|---|
+
 | `Is_Home` | 0.082 | ↑ Positive | Home court — crowd, familiarity, reduced travel |
 | `TS_pct_roll5` | 0.061 | ↑ Positive | Recent shooting efficiency → offensive edge |
 | `eFG_pct_roll5` | 0.054 | ↑ Positive | Three-point shooting efficiency |
