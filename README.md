@@ -141,11 +141,6 @@ venv\Scripts\activate           # Windows
 ```
 
 ### 3. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
 **Core dependencies:**
 
 ```
@@ -208,15 +203,6 @@ print(f"Predicted Outcome: {result['prediction']}")
 
 > The function uses the trained LightGBM model (best single model) and accepts rolling averages computed from the team's most recent games. No post-game data is required or used.
 
-### Retrain All Models
-
-```bash
-python src/models.py
-```
-
-This trains all seven classifiers with 5-fold stratified cross-validation, saves model artifacts to `outputs/models/`, and prints a full comparison table.
-
----
 
 ## Methodology
 
