@@ -100,28 +100,18 @@ LightGBM and CatBoost outperform all other classifiers. Their ability to model n
 ```
 nba-game-prediction/
 │
-├── data/
-│   └── 2019_2024_nba.csv          # Raw NBA game log dataset
+├── Dataset/
+│   └── 2019_2024_nba.csv
 │
-├── notebooks/
-│   └── nba_prediction.ipynb       # Full end-to-end analysis notebook
+├── Notebook/
+│   ├── NEW_NBA_Prediction_v2.ipynb
+│   ├── nba_prediction_code.ipynb
+│   └── nba_scrapping.ipynb
 │
-├── src/
-│   ├── preprocessing.py           # Cleaning pipeline & leakage-free feature engineering
-│   ├── features.py                # Rolling window feature construction
-│   ├── models.py                  # Model training & cross-validation
-│   ├── evaluate.py                # Evaluation metrics, ROC curves, calibration
-│   ├── shap_analysis.py           # SHAP explainability for LightGBM
-│   └── predict.py                 # predict_game() inference function
+├── Report/
+│   ├── Hrushikesh_Mate_DA_Thesis.pdf
+│   └── New_NBA_Project_Report.pdf
 │
-├── outputs/
-│   ├── figures/                   # EDA and model comparison plots
-│   └── models/                    # Saved model artifacts (.pkl)
-│
-├── report/
-│   └── NBA_Game_Outcome_Prediction_Report.pdf
-│
-├── requirements.txt
 └── README.md
 ```
 
@@ -137,8 +127,9 @@ nba-game-prediction/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/hrushikesh-mate/nba-game-prediction.git
-cd nba-game-prediction
+git clone https://github.com/HrushhikeshMate/Basketball-Game-Outcome-Prediction-.git
+
+cd Basketball-Game-Outcome-Prediction
 ```
 
 ### 2. Create a Virtual Environment (Recommended)
@@ -185,7 +176,7 @@ data/2019_2024_nba.csv
 ### Run the Full Notebook
 
 ```bash
-jupyter notebook notebooks/nba_prediction.ipynb
+jupyter notebook notebooks/NEW_NBA_Prediction.ipynb
 ```
 
 The notebook walks through every stage: data cleaning → feature engineering → EDA → model training → evaluation → SHAP analysis → calibration.
@@ -322,16 +313,6 @@ SHAP (SHapley Additive exPlanations) was applied to LightGBM to explain predicti
 | Fixed rolling windows (5 and 10 games) — optimal window may vary by statistic | Low-Medium |
 | Not benchmarked against Vegas implied probabilities | Medium — no comparison to sharpest market consensus |
 
-### Roadmap
-
-| Version | Enhancement |
-|---|---|
-| **V2.0** | Add mirrored opponent rolling features (48 total rolling features) |
-| **V2.1** | Integrate player availability / injury data; lineup quality score using RAPTOR/LEBRON |
-| **V2.2** | Incorporate pre-game Elo ratings as a continuous franchise strength signal |
-| **V2.3** | Isotonic regression post-calibration across all models |
-| **V3.0** | LSTM / Transformer on full game log sequences per team per season |
-| **V3.1** | Historical Vegas odds benchmarking — measure positive expected value thresholds |
 
 ---
 
