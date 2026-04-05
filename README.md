@@ -273,19 +273,19 @@ All models evaluated on the temporal test set (Seasons 2023–2024):
 
 SHAP (SHapley Additive exPlanations) was applied to LightGBM to explain predictions at the feature level. Values are additive — they sum to the model's output log-odds.
 
-| Feature | Mean |SHAP| | Direction | Interpretation |
+| Feature | Mean SHAP | Direction | Interpretation |
 |---|---|---|---|
-
-| Is_Home | 0.082 | ↑ Positive | Home court — crowd, familiarity, reduced travel |
-| TS_pct_roll5 | 0.061 | ↑ Positive | Recent shooting efficiency → offensive edge |
-| eFG_pct_roll5 | 0.054 | ↑ Positive | Three-point shooting efficiency |
-| TOV_pct_roll10 | 0.047 | ↓ Negative | Turnovers gift possessions to opponents |
-| Team (ordinal) | 0.038 | Variable | Franchise quality baseline |
-| DRB_pct_roll5` | 0.031 | ↑ Positive | Defensive rebounding limits second chances |
-| Days_Rest | 0.025 | ↓ at 0 | Back-to-back fatigue penalty |
-| ORB_pct_roll5 | 0.020 | ↑ slight | Offensive rebounding — second-chance scoring |
+| `Is_Home` | 0.082 | ↑ Positive | Home court — crowd, familiarity, reduced travel |
+| `TS_pct_roll5` | 0.061 | ↑ Positive | Recent shooting efficiency → offensive edge |
+| `eFG_pct_roll5` | 0.054 | ↑ Positive | Three-point shooting efficiency |
+| `TOV_pct_roll10` | 0.047 | ↓ Negative | Turnovers gift possessions to opponents |
+| `Team` (ordinal) | 0.038 | Variable | Franchise quality baseline |
+| `DRB_pct_roll5` | 0.031 | ↑ Positive | Defensive rebounding limits second chances |
+| `Days_Rest` | 0.025 | ↓ at 0 | Back-to-back fatigue penalty |
+| `ORB_pct_roll5` | 0.020 | ↑ Slight | Offensive rebounding — second-chance scoring |
 
 > No single feature has SHAP importance above ~0.08, reflecting the genuine complexity of NBA game outcomes. The model combines many weak signals — which is why ensemble methods outperform linear classifiers.
+
 
 ---
 
