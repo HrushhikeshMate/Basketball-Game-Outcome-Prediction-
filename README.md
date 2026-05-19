@@ -218,5 +218,5 @@ SHAP (SHapley Additive exPlanations) applied to LightGBM. Values are additive �
 
 **Hrushikesh Mate**
 📍 Dublin, Ireland
-🔗 [LinkedIn](https://www.linkedin.com/in/your-linkedin-here)
+🔗 [LinkedIn](https://www.linkedin.com/in/hrushikesh-nitin-mate)
 🐙 [GitHub](https://github.com/HrushhikeshMate)
